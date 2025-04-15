@@ -11,13 +11,13 @@ test.beforeEach(async ({ page }) => {
 
 test('realizar cadastro com sucesso', async ({ page }) => {
     await formPage.visit()
-    await formPage.submitStudentForm('Andreza', 'Goncalves', '5521995632', 'Rua dos Bobos 0')
+    await formPage.submitStudentForm('Andreza', 'Goncalves', '5521995632', 'Rua dos Bobos 10')
     await formPage.sent('Thanks for submitting the form')
 })
 
 test('não cadastrar com campo de nome vazio', async({ page }) =>{
     await formPage.visit()
-    await formPage.submitStudentForm('', 'Goncalves', '5521995632', 'Rua dos Bobos 0')
+    await formPage.submitStudentForm('', 'Goncalves', '5521995632', 'Rua dos Bobos 10')
     
     await page.waitForTimeout(800);
     
@@ -29,7 +29,7 @@ test('não cadastrar com campo de nome vazio', async({ page }) =>{
 
 test('não cadastrar com campo de telefone vazio', async({ page }) =>{
     await formPage.visit()
-    await formPage.submitStudentForm('Andreza', 'Goncalves', '', 'Rua dos Bobos 0')
+    await formPage.submitStudentForm('Andreza', 'Goncalves', '', 'Rua dos Bobos 10')
     
     await page.waitForTimeout(800);
     
